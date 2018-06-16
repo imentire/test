@@ -1,0 +1,88 @@
+@import '_fonts'
+@import '_variables'
+
+// Normalize Styles
+@import '../../node_modules/normalize.css/normalize.css'
+
+// Import Modules
+@import 'grid/mixins/helpers'
+@import 'grid/mixins/grid-framework'
+@import 'grid/mixins/bem'
+@import 'grid/components/col'
+@import 'grid/components/grid'
+@import 'grid/components/row'
+@import 'grid/components/text'
+
+
+init($breakpoints, $columns)
+// Box sizing partial styles
+// Apply a natural box layout model to all elements
+*,
+*:before,
+*:after
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
+  color #fff
+  background: #27323C
+
+.ui-header-menu
+  max-width 477px
+  margin 64px auto 19px
+
+.ui-menu
+  display flex
+  justify-content: space-between
+  //display inline
+  position relative
+  list-style none
+  padding 0
+
+  &:after
+    content ''
+    height 2px
+    position absolute
+    left 0
+    width: 100%
+    bottom -19px
+    background rgba(255, 255, 255, .5)
+
+  &__item
+    position relative
+    cursor pointer
+    display inline
+
+    &:before
+      content ''
+      height 2px
+      position absolute
+      left 50%
+      bottom -19px
+      background rgba(255, 255, 255, .5)
+      width: 0%;
+      -webkit-transition: width .3s ease-in-out;
+      -moz--transition: width .3s ease-in-out;
+      transition: width .3s ease-in-out;
+      -webkit-transform:translateX(-50%);
+      -moz-transform:translateX(-50%);
+      transform:translateX(-50%);
+
+    &:hover,
+    &.active
+      &:before
+        background #FFFFFF
+        box-shadow 0 1px 2px rgba(0, 0, 0, 0.2)
+        width: 100%;
+
+  &__link
+    font-family 'Helvetica'
+    font-size 14px
+    line-height 16px
+    text-decoration none
+
+.container
+  background url("/images/desktop.png") top center no-repeat
+  background-size cover
+
+
+
