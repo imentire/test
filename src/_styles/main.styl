@@ -50,8 +50,6 @@ init($breakpoints, $columns)
     cursor pointer
     display inline
     padding 0 10px
-    color #C8E3E6
-    text-shadow 0px 1px 2px rgba(0, 0, 0, 0.5)
 
     &:first-child
       padding-left 0
@@ -76,7 +74,8 @@ init($breakpoints, $columns)
 
     &:hover,
     &.active
-      color: #fff
+      &__link
+        color: #fff
       &:before
         background #fff
         box-shadow 0px 1px 2px rgba(0, 0, 0, 0.2)
@@ -87,6 +86,8 @@ init($breakpoints, $columns)
     font-size 14px
     line-height 16px
     text-decoration none
+    color #C8E3E6
+    text-shadow 0px 1px 2px rgba(0, 0, 0, 0.5)
 
 
 //
