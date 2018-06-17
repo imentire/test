@@ -26,14 +26,12 @@ init($breakpoints, $columns)
   color #fff
   background: #27323C
 
-.ui-header-menu
-  max-width 477px
+.ui-header__menu
+  text-align center
   margin 64px auto 19px
 
 .ui-menu
-  display flex
-  justify-content: space-between
-  //display inline
+  display inline-flex
   position relative
   list-style none
   padding 0
@@ -51,6 +49,15 @@ init($breakpoints, $columns)
     position relative
     cursor pointer
     display inline
+    padding 0 10px
+    color #C8E3E6
+    text-shadow 0px 1px 2px rgba(0, 0, 0, 0.5)
+
+    &:first-child
+      padding-left 0
+
+    &:last-child
+      padding-right 0
 
     &:before
       content ''
@@ -59,26 +66,30 @@ init($breakpoints, $columns)
       left 50%
       bottom -19px
       background rgba(255, 255, 255, .5)
-      width: 0%;
-      -webkit-transition: width .3s ease-in-out;
-      -moz--transition: width .3s ease-in-out;
-      transition: width .3s ease-in-out;
-      -webkit-transform:translateX(-50%);
-      -moz-transform:translateX(-50%);
-      transform:translateX(-50%);
+      width 0%
+      -webkit-transition width .3s ease-in-out
+      -moz--transition width .3s ease-in-out
+      transition width .3s ease-in-out
+      -webkit-transform translateX(-50%)
+      -moz-transform translateX(-50%)
+      transform translateX(-50%)
 
     &:hover,
     &.active
+      color: #fff
       &:before
-        background #FFFFFF
-        box-shadow 0 1px 2px rgba(0, 0, 0, 0.2)
-        width: 100%;
+        background #fff
+        box-shadow 0px 1px 2px rgba(0, 0, 0, 0.2)
+        width 100%
 
   &__link
     font-family 'Helvetica'
     font-size 14px
     line-height 16px
     text-decoration none
+    filter drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5))
+
+
 
 .container
   background url("/images/desktop.png") top center no-repeat
