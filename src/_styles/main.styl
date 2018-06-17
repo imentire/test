@@ -74,8 +74,11 @@ init($breakpoints, $columns)
 
     &:hover,
     &.active
-      &__link
+      color: #fff
+
+      & ^[0]__link
         color: #fff
+
       &:before
         background #fff
         box-shadow 0px 1px 2px rgba(0, 0, 0, 0.2)
