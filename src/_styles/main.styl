@@ -23,18 +23,37 @@ init($breakpoints, $columns)
   -moz-box-sizing border-box
   -webkit-box-sizing border-box
   box-sizing border-box
-  color #fff
-  background: #27323C
 
-.ui-header__menu
-  text-align center
-  margin 64px auto 19px
+html,
+body
+  font-family 'Helvetica'
+  background #27323C
+  position relative
+  color #fff
+
+.heading
+
+  &--lvl1
+    font-size 64px
+
+  &--lvl2
+    font-size 36px
+
+.ui-header
+  position absolute
+  padding 64px 0 19px
+  z-index 2
+  width 100%
+
+  &__menu
+    text-align center
 
 .ui-menu
   display inline-flex
   position relative
   list-style none
   padding 0
+  margin 0
 
   &:after
     content ''
@@ -85,7 +104,6 @@ init($breakpoints, $columns)
         width 100%
 
   &__link
-    font-family 'Helvetica'
     font-size 14px
     line-height 16px
     text-decoration none
@@ -93,10 +111,117 @@ init($breakpoints, $columns)
     text-shadow 0px 1px 2px rgba(0, 0, 0, 0.5)
 
 
-//
-//.container
-//  background url("/images/desktop.png") top center no-repeat
-//  background-size cover
+.ui-space
+  z-index 1
+  position relative
+  background url("/images/main.png") no-repeat top center
+  background-size cover
+  text-align center
 
+  &:after
+    content ''
+    background linear-gradient(180deg, rgba(79, 97, 111, 0.0001) 0%, #27323C 83.22%)
+    bottom 0
+    height 400px
+    width 100%
+    left 0
+    position absolute
+    z-index 1
 
+  &__header
+    line-height normal
+    font-weight bold
+    text-align center
+    color white
+    text-shadow 0px 2px 6px rgba(0, 0, 0, 0.5)
+    position relative
+    z-index 2
+    padding-top 419px
 
+    span
+      display block
+      font-size 32px
+      color #fff
+      font-weight normal
+
+  &__button
+    padding-top 304px
+    position relative
+    z-index 2
+    color #fff
+    text-align center
+
+  &__line
+    text-align center
+    margin-top 17px
+
+.ui-button
+  display inline-block
+  background-color transparent
+  outline 0
+  text-decoration none
+  border 0
+  position relative
+
+  &--default
+    color white
+    font-family 'Helvetica'
+    line-height 43px
+    font-size 18px
+    text-align center
+
+    span
+      position relative
+      z-index 1
+      padding 3px 19px
+      display inline-block
+
+    & svg
+      position absolute
+      z-index 0
+      width 5px
+      height 5px
+
+      &:nth-child(2)
+        top 0
+        left 0
+
+      &:nth-child(3)
+        top 0
+        right 0
+
+      &:nth-child(4)
+        bottom 0
+        left 0
+
+      &:nth-child(5)
+        bottom 0
+        right 0
+
+.ui-spektr
+  &__header
+    text-align center
+    font-weight bold
+    span
+      display block
+      font-size 18px
+      font-weight normal
+
+.ui-steck
+  padding 250px 0
+
+  &__header
+    text-align center
+    font-weight bold
+    span
+      display block
+      font-size 18px
+      font-weight normal
+
+  &__card
+    &--title
+      font-size 18px
+      font-weight bold
+
+    &--description
+      font-size 14px
