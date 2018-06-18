@@ -1,7 +1,5 @@
 extends _layouts/base
 
-include _modules/link/link
-
 block content
   .ui-space
     .ui-space__right-tab
@@ -141,7 +139,7 @@ block content
       .l-grid.l-grid--container
         .l-row.l-row--md-middle
           .l-col.l-col--xs-12.l-col--md-3.h-text--center
-            .ui-steck-card
+            .ui-steck-card.ui-steck-card--react
               .ui-steck-card__img
                 img(src="/images/steck-1.png")
               .ui-steck-card__title React JS
@@ -159,9 +157,8 @@ block content
               .ui-steck-card__title PHP 7
               .ui-steck-card__description Современный язык программирования.
           .l-col.l-col--xs-12.l-col--md-3.h-text--center
-            .ui-steck-card
+            .ui-steck-card.ui-steck-card--doctrine
               .ui-steck-card__img
                 img(src="/images/steck-4.png")
               .ui-steck-card__title Doctrine 2
               .ui-steck-card__description Объектно-реляционный проектор&nbsp;для PHP.
-
