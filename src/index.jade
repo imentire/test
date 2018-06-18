@@ -3,39 +3,58 @@ extends _layouts/base
 include _modules/link/link
 
 block content
-  .container
-    .ui-space
-      .ui-space__header
-        .heading.heading--lvl1
-          | Сложные интернет-проекты
-          span Проектируем. Разрабатываем. Развиваем.
-      .ui-space__button
-        .ui-button.ui-button--default
-          span Подробнее
-          svg(viewBox="0 0 5 5" width="5" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(fill-rule="evenodd" stroke="white" clip-rule="evenodd" d="M0 0 l5 0 M0 0 l0 5")
-          svg(viewBox="0 0 5 5" width="5" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(fill-rule="evenodd" stroke="white" clip-rule="evenodd" d="M0 0 l5 0 l0 5")
-          svg(viewBox="0 0 5 5" width="5" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(fill-rule="evenodd" stroke="white" clip-rule="evenodd" d="M0 0 l0 5 M0 5 l5 0")
-          svg(viewBox="0 0 5 5" width="5" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(fill-rule="evenodd" stroke="white" clip-rule="evenodd" d="M0 5 l5 0 M5 0 l0 5")
-      .ui-space__line
-        svg(width="1" height="307" viewBox="0 0 1 307" fill="none" xmlns="http://www.w3.org/2000/svg")
-          g(style="mix-blend-mode:soft-light" transform="translate(0.5 1.33203)")
-            path(fill-rule="evenodd" clip-rule="evenodd" d="M0 0V304.589V0Z" fill="white")
-            path(d="M0 0V304.589" stroke="url(#paint1_linear)" stroke-linecap="square")
+  .ui-space
+    .ui-space__right-tab
+      .ui-space__target
+        span Главная
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+          g(filter="url(#filter0_d)")
+            circle(cx="12" cy="12" r="10.5" stroke="white" stroke-width="3")
           defs
-            linearGradient#paint1_linear(x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 232.979) scale(1.62428 165.677) rotate(-90)")
-              stop(stop-color="#29343D" stop-opacity="0.01")
-              stop(offset="1" stop-color="white")
+            filter#filter0_d(x="0" y="0" width="24" height="24" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB")
+              feFlood(flood-opacity="0" result="BackgroundImageFix")
+              feColorMatrix(in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0")
+              feOffset(dx="5" dy="5")
+              feGaussianBlur(stdDeviation="12.5")
+              feColorMatrix(type="matrix" values="0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0.15 0")
+              feBlend(mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow")
+              feBlend(mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape")
 
-    .ui-spektr
-      .ui-spektr__header
-        .heading.heading--lvl2
-          | ШИРОКИЙ СПЕКТР
-          span IT РЕШЕНИЙ ДЛЯ БИЗНЕСА
-      .ui-spektr__content
+    .ui-space__header
+      .ui-heading.ui-heading--lvl1 Сложные интернет-проекты
+        span Проектируем. Разрабатываем. Развиваем.
+    .ui-space__button
+      a.ui-button.ui-button--default(href="#")
+        span Подробнее
+        svg.ui-button__line(width="80" height="1" viewBox="0 0 80 1" fill="none" xmlns="http://www.w3.org/2000/svg")
+          g(style="mix-blend-mode:soft-light" transform="translate(80) rotate(90)")
+            rect(width="1" height="80" fill="white")
+
+        svg.ui-button__angle.ui-button__angle--top-left(viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(stroke="white" strike-width="1" d="M0 0 l10 0 M0 0 l0 10")
+        svg.ui-button__angle.ui-button__angle--top-right(viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(stroke="white" strike-width="1" d="M0 0 l10 0 l0 10")
+        svg.ui-button__angle.ui-button__angle--bottom-left(viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(stroke="white" strike-width="1" d="M0 0 l0 10 M0 10 l10 0")
+        svg.ui-button__angle.ui-button__angle--bottom-right(viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(stroke="white" strike-width="1" d="M0 10 l10 0 M10 0 l0 10")
+    .ui-space__line
+      svg(width="1" height="307" viewBox="0 0 1 307" fill="none" xmlns="http://www.w3.org/2000/svg")
+        g(style="mix-blend-mode:soft-light" transform="translate(0.5 1.33203)")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M0 0V304.589V0Z" fill="white")
+          path(d="M0 0V304.589" stroke="url(#paint1_linear)" stroke-linecap="square")
+        defs
+          linearGradient#paint1_linear(x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 232.979) scale(1.62428 165.677) rotate(-90)")
+            stop(stop-color="#29343D" stop-opacity="0.01")
+            stop(offset="1" stop-color="white")
+
+  .ui-spektr
+    .ui-spektr__header
+      .ui-heading.ui-heading--lvl2
+        | ШИРОКИЙ СПЕКТР
+        span IT РЕШЕНИЙ ДЛЯ БИЗНЕСА
+    .ui-spektr__content
+      .ui-spektr__list
         .ui-spektr__item
           .ui-timeline-item.ui-timeline-item--first
             .ui-timeline-item__title Проектирование и дизайн
@@ -48,7 +67,7 @@ block content
               br
               | Дизайн-концепция
         .ui-spektr__item
-          .ui-timeline-item.ui-timeline-item--first
+          .ui-timeline-item.ui-timeline-item--two
             .ui-timeline-item__title Разработка
             .ui-timeline-item__text
               | Комплект дизайн-макетов
@@ -60,7 +79,7 @@ block content
               | Промежуточные версии
               br
         .ui-spektr__item
-          .ui-timeline-item.ui-timeline-item--first
+          .ui-timeline-item.ui-timeline-item--three
             .ui-timeline-item__title Стабилизация
             .ui-timeline-item__text
               | Разработка тест-кейсов
@@ -71,7 +90,7 @@ block content
               br
               | Тестирование
         .ui-spektr__item
-          .ui-timeline-item.ui-timeline-item--first
+          .ui-timeline-item.ui-timeline-item--four
             .ui-timeline-item__title Ввод в эксплуатацию
             .ui-timeline-item__text
               | Подготовка площадки
@@ -80,7 +99,7 @@ block content
               br
               | Промышленная эксплуатация
         .ui-spektr__item
-          .ui-timeline-item.ui-timeline-item--first
+          .ui-timeline-item.ui-timeline-item--five
             .ui-timeline-item__title Проектирование и дизайн
             .ui-timeline-item__text
               | Мониторинг и аналитика
@@ -113,35 +132,36 @@ block content
           path(d="M0.5 4.48903C0.5 2.28787 2.29731 0.5 4.50232 0.5C6.70733 0.5 8.50464 2.28787 8.50464 4.48903C8.50464 6.69019 6.70733 8.47806 4.50232 8.47806C2.29731 8.47806 0.5 6.69019 0.5 4.48903Z" transform="translate(1644.86 177.566)" fill="#DC2DD2" stroke="#27323C")
 
 
-    .ui-steck
-      .ui-steck__header
-        .heading.heading--lvl2
-          | ИСПОЛЬЗУЕМ ПЕРЕДОВОЙ
-          span СТЕК ТЕХНОЛОГИЙ
-      .ui-steck__content
-        .l-grid.l-grid--container
-          .l-row.l-row--md-middle
-            .l-col.l-col--xs-12.l-col--md-3.h-text--center
-              .ui-steck__card
-                .ui-steck__card--img
-                  img(src="/images/steck-1.png")
-                .ui-steck__card--title React JS
-                .ui-steck__card--description Библиотека для быстрого создания интерфейсов.
-            .l-col.l-col--xs-12.l-col--md-3.h-text--center
-              .ui-steck__card
-                .ui-steck__card--img
-                  img(src="/images/steck-2.png")
-                .ui-steck__card--title Zend Framework
-                .ui-steck__card--description PHP фреймворк для разработки веб-приложений.
-            .l-col.l-col--xs-12.l-col--md-3.h-text--center
-              .ui-steck__card
-                .ui-steck__card--img
-                  img(src="/images/steck-3.png")
-                .ui-steck__card--title PHP 7
-                .ui-steck__card--description Современный язык программирования.
-            .l-col.l-col--xs-12.l-col--md-3.h-text--center
-              .ui-steck__card
-                .ui-steck__card--img
-                  img(src="/images/steck-4.png")
-                .ui-steck__card--title Doctrine 2
-                .ui-steck__card--description Объектно-реляционный проектор для PHP.
+  .ui-steck
+    .ui-steck__header
+      .ui-heading.ui-heading--lvl2
+        | ИСПОЛЬЗУЕМ ПЕРЕДОВОЙ
+        span СТЕК ТЕХНОЛОГИЙ
+    .ui-steck__content
+      .l-grid.l-grid--container
+        .l-row.l-row--md-middle
+          .l-col.l-col--xs-12.l-col--md-3.h-text--center
+            .ui-steck-card
+              .ui-steck-card__img
+                img(src="/images/steck-1.png")
+              .ui-steck-card__title React JS
+              .ui-steck-card__description Библиотека для быстрого создания интерфейсов.
+          .l-col.l-col--xs-12.l-col--md-3.h-text--center
+            .ui-steck-card
+              .ui-steck-card__img
+                img(src="/images/steck-2.png")
+              .ui-steck-card__title Zend Framework
+              .ui-steck-card__description PHP фреймворк для разработки веб-приложений.
+          .l-col.l-col--xs-12.l-col--md-3.h-text--center
+            .ui-steck-card
+              .ui-steck-card__img
+                img(src="/images/steck-3.png")
+              .ui-steck-card__title PHP 7
+              .ui-steck-card__description Современный язык программирования.
+          .l-col.l-col--xs-12.l-col--md-3.h-text--center
+            .ui-steck-card
+              .ui-steck-card__img
+                img(src="/images/steck-4.png")
+              .ui-steck-card__title Doctrine 2
+              .ui-steck-card__description Объектно-реляционный проектор&nbsp;для PHP.
+

@@ -20,30 +20,82 @@ init($breakpoints, $columns)
 *,
 *:before,
 *:after
-  -moz-box-sizing border-box
-  -webkit-box-sizing border-box
   box-sizing border-box
 
 html,
 body
-  font-family 'Helvetica'
-  background #27323C
+  font-family $font-helvetica-roman
+  background $color-kingston-blue
   position relative
-  color #fff
+  color white
 
-.heading
+.ui-heading
+  margin 0
+  padding 0
 
   &--lvl1
-    font-size 64px
+    font-family $font-helvetica-bold
+    font-size 22px
+    line-height 1.5
+
+    @media(min-width: $breakpoints['md'])
+      font-size 22px
+      line-height 1
+
+    @media(min-width: $breakpoints['lg'])
+      font-size 64px
+      line-height 1.5
+
+    span
+      display block
+      font-size 14px
+      font-family $font-helvetica-roman
+      font-weight normal
+      margin-top 10px
+
+      @media(min-width: $breakpoints['md'])
+        font-size 14px
+
+      @media(min-width: $breakpoints['lg'])
+        font-size 36px
 
   &--lvl2
-    font-size 36px
+    font-size 22px
+    font-family $font-helvetica-bold
+    line-height 1.5
+
+    @media(min-width: $breakpoints['md'])
+      font-size 22px
+      line-height 1.5
+
+    @media(min-width: $breakpoints['lg'])
+      font-size 36px
+      line-height 1.5
+
+    span
+      display block
+      font-size 14px
+      font-family $font-helvetica-roman
+      font-weight normal
+      margin-top 3px
+
+      @media(min-width: $breakpoints['md'])
+        font-size 14px
+        line-height 1.5
+
+      @media(min-width: $breakpoints['lg'])
+        font-size 24px
+        line-height 1.5
 
 .ui-header
   position absolute
-  padding 64px 0 19px
+  padding 61px 0 20px
   z-index 2
   width 100%
+  display none
+
+  @media(min-width: $breakpoints['md'])
+    display block
 
   &__menu
     text-align center
@@ -61,17 +113,24 @@ body
     position absolute
     left 0
     width: 100%
-    bottom -19px
-    background rgba(255, 255, 255, .5)
+    bottom -20px
+    background $color-white-50
 
   &__item
     position relative
     cursor pointer
     display inline
-    padding 0 10px
+    padding 0 15px 0 14px
 
     &:first-child
       padding-left 0
+      padding-right 15px
+
+      &:hover:before,
+      &.active:before
+        width calc(100% - 15px)
+        left calc(50% - 7.5px)
+
 
     &:last-child
       padding-right 0
@@ -81,26 +140,21 @@ body
       height 2px
       position absolute
       left 50%
-      bottom -19px
-      background rgba(255, 255, 255, .5)
+      bottom -20px
+      background $color-white-50
       width 0%
-      -webkit-transition width .3s ease-in-out
-      -moz--transition width .3s ease-in-out
-      transition width .3s ease-in-out
-      -webkit-transform translateX(-50%)
-      -moz-transform translateX(-50%)
+      transition width .17s ease-in-out
       transform translateX(-50%)
 
     &:hover,
     &.active
-      color: #fff
 
       & ^[0]__link
-        color: #fff
+        color white
 
       &:before
-        background #fff
-        box-shadow 0px 1px 2px rgba(0, 0, 0, 0.2)
+        background white
+        box-shadow 0px 1px 2px $color-black-20
         width 100%
 
   &__link
@@ -108,52 +162,104 @@ body
     line-height 16px
     text-decoration none
     color #C8E3E6
-    text-shadow 0px 1px 2px rgba(0, 0, 0, 0.5)
+    text-shadow 0px 1px 2px $color-black-50
+
+    @media(min-width: $breakpoints['md'])
+      font-size 14px
+      line-height 16px
+
+    @media(min-width: $breakpoints['lg'])
+      font-size 14px
+      line-height 16px
 
 
 .ui-space
   z-index 1
   position relative
-  background url("/images/main.png") no-repeat top center
+  background url('/images/main.png') no-repeat top center
   background-size cover
   text-align center
 
   &:after
     content ''
-    background linear-gradient(180deg, rgba(79, 97, 111, 0.0001) 0%, #27323C 83.22%)
+    background linear-gradient(180deg, rgba(79, 97, 111, 0.0001) 0%, $color-kingston-blue 83.22%)
     bottom 0
     height 400px
     width 100%
     left 0
     position absolute
     z-index 1
+    display none
 
-  &__header
-    line-height normal
-    font-weight bold
-    text-align center
-    color white
-    text-shadow 0px 2px 6px rgba(0, 0, 0, 0.5)
-    position relative
-    z-index 2
-    padding-top 419px
+    @media(min-width: $breakpoints['md'])
+      display block
+
+  &__right-tab
+    position absolute
+    right 0
+    max-width 284px
+    width 15%
+    background linear-gradient(to right, rgba(39, 50, 60, 0) 43.78%, rgba(39, 50, 60, 0.3) 100%)
+    height 100%
+    top 0
+    z-index 3
+    display none
+
+    @media(min-width: $breakpoints['xl'])
+      display block
+
+  &__target
+    padding-left 10px
+    padding-top 379px
+    width 100%
+    display flex
+    align-items center
+    max-width 193px
+    justify-content space-between
 
     span
-      display block
-      font-size 32px
-      color #fff
-      font-weight normal
+      font-size 18px
+      color #FFFFFF
+      text-shadow 0px 4px 4px $color-black-25
+
+
+  &__header
+    text-align center
+    color white
+    text-shadow 0px 2px 6px $color-black-50
+    position relative
+    z-index 2
+    padding-top 222px
+
+    @media(min-width: $breakpoints['md'])
+      padding-top 234px
+
+    @media(min-width: $breakpoints['lg'])
+      padding-top 340px
 
   &__button
-    padding-top 304px
+    padding-top 154px
     position relative
     z-index 2
     color #fff
     text-align center
 
+    @media(min-width: $breakpoints['md'])
+      padding-top 100px
+
+    @media(min-width: $breakpoints['lg'])
+      padding-top 335px
+
   &__line
     text-align center
     margin-top 17px
+    height 110px
+
+    @media(min-width: $breakpoints['md'])
+      height 156px
+
+    @media(min-width: $breakpoints['lg'])
+      height 307px
 
 .ui-button
   display inline-block
@@ -165,63 +271,360 @@ body
 
   &--default
     color white
-    font-family 'Helvetica'
+    font-family $font-helvetica-light
     line-height 43px
     font-size 18px
     text-align center
+    text-transform uppercase
 
     span
       position relative
       z-index 1
-      padding 3px 19px
+      padding 3px 35px 4px
       display inline-block
+      font-weight 300
 
-    & svg
+    & ^[0]__angle
       position absolute
       z-index 0
-      width 5px
-      height 5px
+      transition all .17s ease-in-out
 
-      &:nth-child(2)
+      &--top-left
         top 0
         left 0
+        width 5px
+        height 5px
 
-      &:nth-child(3)
+      &--top-right
         top 0
         right 0
+        width 5px
+        height 5px
 
-      &:nth-child(4)
+      &--bottom-left
         bottom 0
         left 0
+        width 5px
+        height 5px
 
-      &:nth-child(5)
+      &--bottom-right
         bottom 0
         right 0
+        width 5px
+        height 5px
+
+    &:hover ^[0]__angle
+      width 10px
+      height 10px
+
+  &__line
+    bottom 0
+    left 50%
+    margin-left -40px
+    position absolute
 
 .ui-spektr
+  position relative
+  padding-top 75px
+
+  @media(min-width: $breakpoints['md'])
+    padding-top 135px
+
+  @media(min-width: $breakpoints['lg'])
+    padding-top 47px
+
   &__header
     text-align center
-    font-weight bold
-    span
+
+  &__content
+    position relative
+    margin-top 100px
+
+    @media(min-width: $breakpoints['md'])
+      margin-top 80px
+
+    @media(min-width: $breakpoints['xl'])
+      height 413px
+      margin-top 118px
+      overflow hidden
+      margin-top 0
+
+  &__list
+    position relative
+    max-width 1205px
+    margin 0 auto
+    display flex
+    justify-content space-between
+    padding 27px 25px 0
+
+    &:before
+      content ''
+      position absolute
+      width calc(100% - 50px)
+      height 4px
+      background linear-gradient(to right, #10DEBC, #FF10D8)
+      left 25px
+      top 0
+
+    @media(min-width: $breakpoints['xl'])
+      height 413px
       display block
+      padding 0
+
+  &__timeline
+    position absolute
+    width 100%
+    top 0
+    left 50%
+    transform translate(-50%, 0)
+    width 1920px
+    display none
+
+    @media(min-width: $breakpoints['xl'])
+      display block
+
+.ui-timeline-item
+  position relative
+  z-index 1
+
+  @media(min-width: $breakpoints['xl'])
+    position absolute
+
+  &:before
+    content ''
+    position absolute
+    top -38px
+    left 0
+    width 24px
+    height 24px
+    border 3px solid $color-kingston-blue
+    border-radius 50%
+
+    @media(min-width: $breakpoints['xl'])
+      display none
+
+  &:after
+    content ''
+    position absolute
+    top -34px
+    left 4px
+    width 16px
+    height 16px
+    border 3px solid $color-kingston-blue
+    border-radius 50%
+
+    @media(min-width: $breakpoints['xl'])
+      display none
+
+  &__title
+    font-family $font-helvetica-roman
+    font-size 14px
+    line-height 1
+    color white
+
+    @media(min-width: $breakpoints['md'])
+      font-size 14px
+      line-height 1.5
+      min-height 42px
+
+    @media(min-width: $breakpoints['xl'])
       font-size 18px
-      font-weight normal
+      line-height 1
+      min-height auto
+
+  &__text
+    font-size 12px
+    line-height 21px
+    font-family $font-helvetica-light
+    margin-top 10px
+
+    @media(min-width: $breakpoints['md'])
+      font-size 12px
+      margin-top 0
+      line-height 18px
+
+    @media(min-width: $breakpoints['xl'])
+      font-size 14px
+      margin-top 10px
+
+  &--first
+    text-align left
+
+    &:before
+      background #10DEBC
+
+    &:after
+      background #10DEBC
+
+    @media(min-width: $breakpoints['md'])
+      text-align left
+
+    @media(min-width: $breakpoints['xl'])
+      top 10px
+      left 3px
+      text-align left
+
+    & ^[0]__text
+      color #3CB8C1
+
+  &--two
+    text-align left
+
+    &:before
+      background #4FBAC9
+
+    &:after
+      background #4FBAC9
+
+    @media(min-width: $breakpoints['md'])
+      text-align left
+
+    @media(min-width: $breakpoints['xl'])
+      bottom 14px
+      left 17px
+      text-align left
+
+    & ^[0]__text
+      color #3FB6C1
+
+  &--three
+    text-align left
+
+    &:before
+      background #807DC9
+      left 50%
+      margin-left -12px
+
+    &:after
+      background #807DC9
+      left 50%
+      margin-left -8px
+
+    @media(min-width: $breakpoints['md'])
+      text-align center
+
+    @media(min-width: $breakpoints['xl'])
+      bottom 14px
+      left 307px
+      text-align left
+
+    & ^[0]__text
+      color #6297C6
+
+  &--four
+    text-align left
+
+    &:before
+      background #BC4AD0
+      left auto
+      right 0
+
+    &:after
+      background #BC4AD0
+      left auto
+      right 4px
+
+    @media(min-width: $breakpoints['md'])
+      text-align right
+
+    @media(min-width: $breakpoints['xl'])
+      bottom 35px
+      left 677px
+      text-align left
+
+    & ^[0]__text
+      color #9170CB
+
+  &--five
+    text-align left
+
+    &:before
+      background #F619D7
+      left auto
+      right 0
+
+    &:after
+      background #F619D7
+      left auto
+      right 4px
+
+    @media(min-width: $breakpoints['md'])
+      text-align right
+
+    @media(min-width: $breakpoints['xl'])
+      top 17px
+      right 83px
+      text-align left
+
+    & ^[0]__text
+      color #AB57CD
 
 .ui-steck
-  padding 250px 0
+  padding 75px 0
+
+  @media(min-width: $breakpoints['md'])
+    padding 88px 0
+
+  @media(min-width: $breakpoints['lg'])
+    padding 235px 0
+
+  &__content
+    margin-top 0
+
+    @media(min-width: $breakpoints['md'])
+      margin-top 35px
+
+    @media(min-width: $breakpoints['lg'])
+      margin-top 118px
 
   &__header
     text-align center
+
+.ui-steck-card
+  margin-top 35px
+
+  @media(min-width: $breakpoints['md'])
+    margin-top 0
+
+  &__img
+    min-height 114px
+    display flex
+    align-items center
+    justify-content center
+
+  &__title
     font-weight bold
-    span
-      display block
-      font-size 18px
-      font-weight normal
+    font-size 14px
+    margin-top 18px
 
-  &__card
-    &--title
-      font-size 18px
-      font-weight bold
-
-    &--description
+    @media(min-width: $breakpoints['md'])
       font-size 14px
+
+    @media(min-width: $breakpoints['lg'])
+      font-size 18px
+
+  &__description
+    font-size 12px
+    line-height 1.5
+    max-width 240px
+    margin 10px auto 0
+
+    @media(min-width: $breakpoints['md'])
+      font-size 12px
+
+    @media(min-width: $breakpoints['lg'])
+      font-size 14px
+
+
+.overlay
+  position absolute
+  z-index 10
+  opacity .3
+  top 0
+  bottom 0
+  overflow hidden
+  width 100%
+
+  img
+    display block
+    margin 0 auto
