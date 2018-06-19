@@ -1,54 +1,42 @@
-# Test readme
-
-Generated on 2018-06-16 using
-[generator-yeogurt@2.0.1](https://github.com/larsonjj/generator-yeogurt)
-
-## Description
-
-This is an example readme file.
-Describe your site/app here.
-
-## Technologies used
-
-JavaScript
-- [Browserify](http://browserify.org/)
-- [Node](https://nodejs.org/)
-
-Styles
-- [Stylus](https://learnboost.github.io/stylus/)
-
-Markup
-- [Jade](http://jade-lang.com/)
-
-Optimization
-- [Imagemin](https://github.com/imagemin/imagemin)
-- [Uglify](https://github.com/mishoo/UglifyJS)
-
-Server
-- [BrowserSync](http://www.browsersync.io/)
-
-Linting
-- [ESlint](http://eslint.org/)
-
-Automation
-- [Gulp](http://gulpjs.com)
-
-Code Management
-- [Editorconfig](http://editorconfig.org/)
-- [Git](https://git-scm.com/)
-
-
-## Automated tasks
-
-This project uses [Gulp](http://gulpjs.com) to run automated tasks for development and production builds.
-The tasks are as follows:
-
-`gulp --production`: Same as `gulp serve --production` also run `gulp test` and  not boot up production server
-
-`gulp serve`: Compiles preprocessors and boots up development server
-`gulp serve --open`: Same as `gulp serve` but will also open up site/app in your default browser
-`gulp serve --production`: Same as `gulp serve` but will run all production tasks so you can view the site/app in it's final optimized form
-
-`gulp test`: Lints all `*.js` file in the `source` folder using eslint
-
-***Adding the `--debug` option to any gulp task displays extra debugging information (ex. data being loaded into your templates)***
+### Описание
+ 
+ Тестовое задание
+ 
+ ## Технологии
+ 
+ JavaScript
+ - [Browserify](http://browserify.org/)
+ - [Node](https://nodejs.org/)
+ 
+ Styles
+ - [Stylus](https://learnboost.github.io/stylus/)
+ 
+ Markup
+ - [Jade](http://jade-lang.com/)
+ 
+ Optimization
+ - [Imagemin](https://github.com/imagemin/imagemin)
+ - [Uglify](https://github.com/mishoo/UglifyJS)
+ 
+ Server
+ - [BrowserSync](http://www.browsersync.io/)
+ 
+ Linting
+ - [ESlint](http://eslint.org/)
+ 
+ Automation
+ - [Gulp](http://gulpjs.com)
+ 
+ Code Management
+ - [Editorconfig](http://editorconfig.org/)
+ - [Git](https://git-scm.com/)
+ 
+ 
+ ## Автоматизация
+ 
+ Этот проект использует [Gulp](http://gulpjs.com) для автоматического выполнения задач при разработке и сборке проекта.
+ Задачи в проекте:
+ 
+ `gulp serve`: Сборка проекта и запуск локального web-сервера
+ `gulp serve --open`: Аналогична `gulp serve` но также открывает сайт / приложение в браузере по умолчанию
+ `gulp serve --production`: Аналогична `gulp serve` но запускает все задачи по сборке, для просмотра сайта / приложения в его окончательной оптимизированной форме

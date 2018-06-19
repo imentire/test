@@ -1,5 +1,6 @@
 @import '_fonts'
 @import '_variables'
+@import '_mixins'
 
 // Normalize Styles
 @import '../../node_modules/normalize.css/normalize.css'
@@ -43,6 +44,7 @@ body.is-opened-menu
 
   .ui-space
     z-index 11
+    box-shadow -35px 3px 7px -16px rgba(224, 224, 224, .05)
 
     &:after
       display block
@@ -130,8 +132,10 @@ html.is-opened-menu
       z-index 10
 
       .ui-menu
-        flex-wrap wrap
         display block
+
+        &__list
+          display block
 
         &:after
           display none
@@ -175,6 +179,23 @@ html.is-opened-menu
   padding 0
   margin 0
 
+  &__list
+    display inline-flex
+
+  &--with-indicator
+    .ui-menu-indicator
+      display none
+      height 2px
+      position absolute
+      left 0
+      bottom -20px
+      background white
+      width 0
+      transition width .3s ease-in-out, left .3s ease-in-out
+
+      @media(min-width: $breakpoints['md'])
+        display block
+
   &:after
     content ''
     height 2px
@@ -183,6 +204,7 @@ html.is-opened-menu
     width: 100%
     bottom -20px
     background $color-white-50
+    box-shadow 0px 1px 2px $color-black-20
 
   &__item
     position relative
@@ -204,7 +226,7 @@ html.is-opened-menu
       padding-right 0
 
     &:before
-      content ''
+      //content ''
       height 2px
       position absolute
       left 50%
@@ -252,19 +274,19 @@ html.is-opened-menu
   @media(min-width: $breakpoints['md'])
     background url('/images/main-md.jpg') no-repeat top center
 
-  @media(min-width: $breakpoints['md'])
-    background url('/images/main.png') no-repeat top center
+  @media(min-width: $breakpoints['lg'])
+    retina('/images/main.png', 2, cover, no-repeat top center)
 
   &:after
     content ''
-    background linear-gradient(180deg, rgba(79, 97, 111, 0.0001) 0%, $color-kingston-blue 83.22%)
+    background linear-gradient(to bottom, rgba(79, 97, 111, 0.0001) 0%, $color-kingston-blue 83.22%)
     bottom 0
     height 400px
     width 100%
     left 0
     position absolute
     z-index 1
-    display none
+    display block
 
     @media(min-width: $breakpoints['md'])
       display block
@@ -328,13 +350,17 @@ html.is-opened-menu
   &__line
     text-align center
     margin-top 17px
-    height 110px
 
-    @media(min-width: $breakpoints['md'])
-      height 156px
+    svg
+      height 110px
+      position relative
+      z-index 2
 
-    @media(min-width: $breakpoints['lg'])
-      height 307px
+      @media(min-width: $breakpoints['md'])
+        height 156px
+
+      @media(min-width: $breakpoints['lg'])
+        height 307px
 
 .ui-button
   display inline-block
@@ -500,7 +526,7 @@ html.is-opened-menu
     content ''
     position absolute
     top 25px
-    right -1px
+    right -2px
     width 30px
     height 30px
     border 3px solid $color-kingston-blue
@@ -508,10 +534,10 @@ html.is-opened-menu
 
     @media(min-width: $breakpoints['md'])
       top -38px
-    left 0
-    right auto
-    width 24px
-    height 24px
+      left 0
+      right auto
+      width 24px
+      height 24px
 
     @media(min-width: $breakpoints['xl'])
       display none
@@ -520,7 +546,7 @@ html.is-opened-menu
     content ''
     position absolute
     top 30px
-    right 4px
+    right 3px
     width 20px
     height 20px
     border 3px solid $color-kingston-blue
@@ -529,9 +555,9 @@ html.is-opened-menu
     @media(min-width: $breakpoints['md'])
       right auto
       top -34px
-    left 4px
-    width 16px
-    height 16px
+      left 4px
+      width 16px
+      height 16px
 
     @media(min-width: $breakpoints['xl'])
       display none
@@ -597,8 +623,8 @@ html.is-opened-menu
 
       @media(min-width: $breakpoints['md'])
         top -38px
-      left 0
-      right auto
+        left 0
+        right auto
 
     &:after
       top 26px
@@ -607,7 +633,7 @@ html.is-opened-menu
       @media(min-width: $breakpoints['md'])
         right auto
         top -34px
-      left 4px
+        left 4px
 
     @media(min-width: $breakpoints['md'])
       text-align left
@@ -626,24 +652,24 @@ html.is-opened-menu
     &:before
       background #807DC9
       top 16px
-      right -1px
+      right -2px
 
       @media(min-width: $breakpoints['md'])
         top -38px
-      left 50%
-      right auto
-      margin-left -12px
+        left 50%
+        right auto
+        margin-left -12px
 
     &:after
       background #807DC9
       top 21px
-      right 4px
+      right 3px
 
       @media(min-width: $breakpoints['md'])
         top -34px
-      left 50%
-      margin-left -8px
-      right auto
+        left 50%
+        margin-left -8px
+        right auto
 
     @media(min-width: $breakpoints['md'])
       text-align center
@@ -662,22 +688,22 @@ html.is-opened-menu
     &:before
       background #BC4AD0
       top 16px
-      right -1px
+      right -2px
 
       @media(min-width: $breakpoints['md'])
         top -38px
-      left auto
-      right 0
+        left auto
+        right 0
 
     &:after
       background #BC4AD0
       top 21px
-      right 4px
+      right 3px
 
       @media(min-width: $breakpoints['md'])
         top -34px
-      left auto
-      right 4px
+        left auto
+        right 4px
 
     @media(min-width: $breakpoints['md'])
       text-align right
@@ -696,22 +722,22 @@ html.is-opened-menu
     &:before
       background #F619D7
       top 31px
-      right -1px
+      right -2px
 
       @media(min-width: $breakpoints['md'])
         top -38px
-      left auto
-      right 0
+        left auto
+        right 0
 
     &:after
       background #F619D7
       top 36px
-      right 4px
+      right 3px
 
       @media(min-width: $breakpoints['md'])
         top -34px
-      left auto
-      right 4px
+        left auto
+        right 4px
 
     @media(min-width: $breakpoints['md'])
       text-align right
@@ -816,15 +842,3 @@ html.is-opened-menu
       line-height 1.5
 
 
-.overlay
-  position absolute
-  z-index 10
-  opacity .3
-  top 0
-  bottom 0
-  overflow hidden
-  width 100%
-
-  img
-    display block
-    margin 0 auto

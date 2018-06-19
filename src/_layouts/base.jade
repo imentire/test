@@ -23,19 +23,21 @@ body
 
   header.ui-header
     nav.ui-header__menu.js-menu
-      ul.ui-menu
-        li.ui-menu__item.active
-          a(href="").ui-menu__link ГЛАВНАЯ
-        li.ui-menu__item
-          a(href="").ui-menu__link УНИВЕРСИТЕТ
-        li.ui-menu__item
-          a(href="").ui-menu__link ВАКАНСИИ
-        li.ui-menu__item
-          a(href="").ui-menu__link О НАС
-        li.ui-menu__item
-          a(href="").ui-menu__link КОНТАКТЫ
+      .ui-menu.ui-menu--with-indicator
+        .ui-menu__list
+          .ui-menu__item.active
+            a(href="").ui-menu__link ГЛАВНАЯ
+          .ui-menu__item
+            a(href="").ui-menu__link УНИВЕРСИТЕТ
+          .ui-menu__item
+            a(href="").ui-menu__link ВАКАНСИИ
+          .ui-menu__item
+            a(href="").ui-menu__link О НАС
+          .ui-menu__item
+            a(href="").ui-menu__link КОНТАКТЫ
+        span.ui-menu-indicator
 
-  span.ui-target
+  a.ui-target(href="#")
     svg(width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg")
       g(filter="url(#filter0_d)")
         path(fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V4H0V0ZM0 12H24V16H0V12ZM24 6H0V10H24V6Z" transform="translate(4 2)" fill="white")
@@ -48,6 +50,7 @@ body
           feColorMatrix(type="matrix" values="0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0.3 0")
           feBlend(mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow")
           feBlend(mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape")
+
 
   block content
 
