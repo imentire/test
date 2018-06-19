@@ -28,6 +28,27 @@ body
   background $color-kingston-blue
   position relative
   color white
+  transition padding-left .17s ease-in-out, padding-top .17s ease-in-out
+
+body.is-opened-menu
+  overflow hidden
+  padding-left 270px
+  padding-top 68px
+  width 100%
+  height 100%
+
+  .ui-target
+    top 78px
+    right 5%
+
+  .ui-space
+    z-index 11
+
+    &:after
+      display block
+
+html.is-opened-menu
+  overflow hidden
 
 .ui-heading
   margin 0
@@ -93,13 +114,59 @@ body
   padding 61px 0 20px
   z-index 2
   width 100%
-  display none
-
-  @media(min-width: $breakpoints['md'])
-    display block
 
   &__menu
     text-align center
+    display none
+
+    &.is-open
+      display block
+      background $color-kingston-blue
+      position fixed
+      height 100%
+      top 38px
+      left 38px
+      width 100%
+      z-index 10
+
+      .ui-menu
+        flex-wrap wrap
+        display block
+
+        &:after
+          display none
+
+        &__item
+          padding 0
+          width 100%
+          text-align left
+          display block
+          margin-top 30px
+
+          &:before
+            display none
+
+        &__item + &__item
+          margin-top 30px
+
+        &__link
+          font-size 20px
+          letter-spacing 0.416667px
+          color #fff
+
+    @media(min-width: $breakpoints['md'])
+      display block
+
+.ui-target
+  display block
+  position absolute
+  right 25px
+  top 40px
+  cursor pointer
+  z-index 12
+
+  @media(min-width: $breakpoints['md'])
+    display none
 
 .ui-menu
   display inline-flex
@@ -180,6 +247,10 @@ body
   background url('/images/main-revert.jpg') no-repeat top center
   background-size cover
   text-align center
+  min-width 320px
+
+  @media(min-width: $breakpoints['md'])
+    background url('/images/main-md.jpg') no-repeat top center
 
   @media(min-width: $breakpoints['md'])
     background url('/images/main.png') no-repeat top center

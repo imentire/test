@@ -4,11 +4,10 @@
 'use strict';
 
 var $ = require('jquery');
-var Link = require('../_modules/link/link');
 
 $(function() {
-  new Link(); // Activate Link modules logic
-  console.log('Welcome to Yeogurt!');
+  $('.ui-target').on('click', function() {
+    $('html, body').toggleClass('is-opened-menu');
+    $('.js-menu').toggleClass('is-open');
+  });
 });
-
-
